@@ -47,3 +47,7 @@ Natural Earth は WGS84、平面直角座標系の定義は JGD2011（EPSG:6674�
 ## 同梱しているもの
 
 - `vendor/proj4.js`: proj4js 2.15.0（MIT License、`vendor/proj4-LICENSE.md`）
+
+## ライセンス
+
+[MIT License](LICENSE)。ただし `vendor/proj4.js` は proj4js のライセンス（MIT）に、`data/` は Natural Earth の条件（パブリックドメイン）に従います。
