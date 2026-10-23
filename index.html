@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>地図は算数で描ける — 教材</title>
+    <meta name="description" content="緯度経度がピクセル座標になるまでの計算を、値を変えながら確かめる教材" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>地図は算数で描ける <small>教材</small></h1>
+      <nav id="tabs" aria-label="章"></nav>
+    </header>
+    <main>
+      <section class="stage">
+        <h2 id="title"></h2>
+        <p id="lead"></p>
+        <div class="canvas-wrap">
+          <canvas id="map"></canvas>
+        </div>
+        <p class="hint">
+          <span id="canvas-size"></span>　クリックした場所を調べます。<span id="pan-hint">ドラッグで中心を動かせます。</span>
+        </p>
+      </section>
+      <aside class="panel">
+        <section>
+          <h3>調べる地点</h3>
+          <div class="probe">
+            <select id="place" aria-label="地点"></select>
+            <label>経度 <input id="lon" type="number" step="0.0001" min="-180" max="180" /></label>
+            <label>緯度 <input id="lat" type="number" step="0.0001" min="-90" max="90" /></label>
+            <button id="center" type="button">この地点を画面の中心にする</button>
+          </div>
+        </section>
+        <section>
+          <h3>表示条件（決め打ち）</h3>
+          <div id="controls"></div>
+        </section>
+        <section>
+          <h3>計算</h3>
+          <div id="steps"></div>
+        </section>
+      </aside>
+    </main>
+    <footer>
+      <p>
+        解説記事: <a id="blog">地図は算数で描ける</a>
+        ソース: <a href="https://github.com/jumboly/map-by-arithmetic">GitHub</a>
+      </p>
+      <p>
+        海岸線データ: <a href="https://www.naturalearthdata.com/">Natural Earth</a>
+        （1:110m Coastline、1:10m Coastline から大阪湾周辺を切り出し。パブリックドメイン）。
+        平面直角座標系の変換: <a href="https://github.com/proj4js/proj4js">proj4js</a>（MIT License）。
+      </p>
+    </footer>
+    <script src="vendor/proj4.js"></script>
+    <script type="module" src="src/main.js"></script>
+  </body>
+</html>
