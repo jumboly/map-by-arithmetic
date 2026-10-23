@@ -67,7 +67,7 @@ const scaleControls = [
     max: 8,
     step: 0.1,
     when: (st) => st.basis === "scale",
-    show: (v) => `1 mm = ${f(v, 1)} px（1インチに直すと ${f(m.dpiFromPxPerMm(v), 1)} px。これが DPI）`,
+    show: (v) => `1 mm = ${f(v, 1)} px（1インチに直すと ${f(m.dpiFromPxPerMm(v), 1)} px。これが DPI（PPI））`,
   },
 ];
 
